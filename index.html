@@ -1,247 +1,772 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Arindam Mukherjee</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arindam Mukherjee - Cryptography Researcher</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="title" content="Arindam Mukherjee – Cryptography Researcher & Assistant Professor in Mathematics" />
+    <meta name="description" content="Official academic page of Arindam Mukherjee, PhD researcher in post-quantum cryptography and Assistant Professor in Mathematics. Includes research, publications, and talks." />
+    <meta name="keywords" content="Arindam Mukherjee, Cryptography, Post-Quantum, LWE, Lattice, IIT Madras, Mathematics, Assistant Professor, Academic Research" />
+    <meta name="author" content="Arindam Mukherjee" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Arindam Mukherjee – Cryptography Researcher & Assistant Professor" />
+    <meta property="og:description" content="Explore Arindam Mukherjee's academic profile, including post-quantum cryptography research, publications, and contact info." />
+    <meta property="og:image" content="photo.jpg" />
+    
+    <style>
+        :root {
+            --primary-color: #6B8E23;
+            --primary-dark: #556B2F;
+            --primary-light: #e8f0d8;
+            --accent-color: #8FBC8F;
+            --text-dark: #2d3436;
+            --text-light: #636e72;
+            --text-muted: #95a5a6;
+            --bg-light: #fafbf9;
+            --bg-white: #ffffff;
+            --border-color: #dfe6e0;
+            --card-shadow: 0 2px 8px rgba(107, 142, 35, 0.08);
+            --card-shadow-hover: 0 4px 16px rgba(107, 142, 35, 0.12);
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --border-radius: 8px;
+            --transition: all 0.3s ease;
+        }
 
-  <!-- SEO Meta Tags -->
-  <meta name="title" content="Arindam Mukherjee – Cryptography Researcher & Assistant Professor in Mathematics" />
-  <meta name="description" content="Official academic page of Arindam Mukherjee, PhD researcher in post-quantum cryptography and Assistant Professor in Mathematics. Includes research, publications, and talks." />
-  <meta name="keywords" content="Arindam Mukherjee, Cryptography, Post-Quantum, LWE, Lattice, IIT Madras, Mathematics, Assistant Professor, Academic Research" />
-  <meta name="author" content="Arindam Mukherjee" />
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://arindamIITM.github.io/academic-site/" />
-  <meta property="og:title" content="Arindam Mukherjee – Cryptography Researcher & Assistant Professor in Mathematics" />
-  <meta property="og:description" content="Explore Arindam Mukherjee's academic profile, including post-quantum cryptography research, publications, and contact info." />
-  <meta property="og:image" content="photo.png" />
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Arindam Mukherjee – Cryptography Researcher & Assistant Professor in Mathematics" />
-  <meta name="twitter:description" content="Explore Arindam Mukherjee's academic profile, including post-quantum cryptography research, publications, and contact info." />
-  <meta name="twitter:image" content="photo.png" />
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
 
-  <!-- Main Styles -->
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: "Segoe UI", sans-serif;
-      margin: 0 auto;
-      padding: 0 1em;
-      max-width: 960px;
-      background: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
-    }
-    header, section {
-      margin-bottom: 2em;
-    }
-    h1, h2 {
-      color: #004080;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .contact {
-      font-size: 0.95em;
-      color: #555;
-    }
-    .profile-pic {
-      width: 150px;
-      height: auto;
-      border: 2px solid #004080;
-      margin-top: 1em;
-    }
-    .skills-box {
-      display: inline-block;
-      background-color: #e0ecff;
-      color: #003366;
-      padding: 0.4em 0.8em;
-      margin: 0.3em;
-      border-radius: 5px;
-      font-size: 0.95em;
-      border: 1px solid #b0d0ff;
-    }
-    ul {
-      padding-left: 1.2em;
-    }
-    footer {
-      margin-top: 3em;
-      text-align: center;
-      font-size: 0.9em;
-      color: #666;
-      padding-bottom: 2em;
-    }
-    .quote {
-      margin-top: 1.5em;
-      font-style: italic;
-      color: #444;
-    }
-  </style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-  <!-- Print Styles -->
-  <style media="print">
-    body {
-      background: #fff;
-      color: #000;
-      font-size: 12pt;
-      max-width: none;
-      padding: 0;
-    }
-    a::after {
-      content: " (" attr(href) ")";
-      font-size: 10pt;
-    }
-    .profile-pic {
-      float: right;
-      margin-left: 1em;
-      max-width: 150px;
-    }
-    footer, .quote {
-      font-style: italic;
-      font-size: 10pt;
-      color: #333;
-    }
-    .cv-button {
-  display: inline-block;
-  margin-top: 0.5em;
-  background-color: #004080;
-  color: #fff;
-  padding: 0.4em 1em;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 0.95em;
-}
-.cv-button:hover {
-  background-color: #0059b3;
-}
+        h1 {
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.2;
+        }
 
-    a[href^="https://github.com"],
-    a[href^="https://dblp.org"],
-    a[href^="https://orcid.org"] {
-      text-decoration: none;
-    }
-  </style>
+        h2 {
+            font-size: clamp(1.35rem, 4vw, 1.75rem);
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        h3 {
+            font-size: clamp(1.05rem, 3vw, 1.25rem);
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: var(--spacing-sm);
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        ul, ol {
+            padding-left: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+        }
+
+        li {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-md);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 var(--spacing-lg);
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: #ffffff;
+            padding: var(--spacing-lg) 0;
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--card-shadow);
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .header-content {
+                grid-template-columns: auto 1fr;
+                align-items: flex-start;
+            }
+        }
+
+        .profile-pic-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .profile-pic-wrapper {
+                justify-content: flex-start;
+            }
+        }
+
+        .profile-pic {
+            width: clamp(120px, 25vw, 180px);
+            height: clamp(120px, 25vw, 180px);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+            transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1) rotateZ(5deg);
+            filter: brightness(1.1) drop-shadow(0 8px 20px rgba(0, 0, 0, 0.3));
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .header-text h1 {
+            color: #ffffff;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .position {
+            font-size: clamp(0.9rem, 2.5vw, 1.05rem);
+            font-weight: 500;
+            margin-bottom: var(--spacing-md);
+            opacity: 0.98;
+            color: #ffffff;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            color: #ffffff;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            flex-wrap: wrap;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: var(--border-radius);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+            min-height: 44px;
+            touch-action: manipulation;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.25);
+            text-decoration: none;
+        }
+
+        section {
+            margin-bottom: var(--spacing-xl);
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-intro {
+            color: var(--text-light);
+            font-size: clamp(0.95rem, 2vw, 1.05rem);
+            margin-bottom: var(--spacing-lg);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            border-left: 4px solid var(--primary-color);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        @media (min-width: 768px) {
+            .card {
+                padding: var(--spacing-lg);
+            }
+        }
+
+        .card:hover {
+            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+        }
+
+        .card-subtitle {
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            color: var(--text-muted);
+            margin-bottom: var(--spacing-sm);
+            font-weight: 500;
+        }
+
+        .card-description {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .skill-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, var(--primary-light) 0%, #f0f8e8 100%);
+            color: var(--primary-dark);
+            border-radius: 20px;
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            font-weight: 500;
+            border: 1px solid #d4e8c1;
+            transition: var(--transition);
+            min-height: 36px;
+            cursor: default;
+        }
+
+        .skill-badge:hover {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(107, 142, 35, 0.15);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-2 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .achievement-card {
+            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(232, 240, 216, 0.5) 100%);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--accent-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        @media (min-width: 768px) {
+            .achievement-card {
+                padding: var(--spacing-lg);
+            }
+        }
+
+        .achievement-card p {
+            color: var(--text-dark);
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: #ffffff;
+            padding: var(--spacing-lg) var(--spacing-md);
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: var(--spacing-xl) 0;
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        @media (min-width: 768px) {
+            .quote-section {
+                padding: var(--spacing-xl) var(--spacing-lg);
+            }
+        }
+
+        .quote-text {
+            font-style: italic;
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            line-height: 1.8;
+            color: #ffffff;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .quote-author {
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            opacity: 0.9;
+            font-weight: 500;
+            color: #ffffff;
+        }
+
+        footer {
+            background: #f5f7f3;
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-lg) var(--spacing-md);
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            font-size: clamp(0.8rem, 2vw, 0.9rem);
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                font-size: 15px;
+            }
+
+            h1 {
+                margin-bottom: var(--spacing-sm);
+            }
+
+            h2 {
+                margin-top: var(--spacing-md);
+            }
+
+            .card {
+                padding: var(--spacing-md);
+            }
+
+            .skills-container {
+                gap: var(--spacing-xs);
+            }
+
+            .skill-badge {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (min-width: 480px) and (max-width: 768px) {
+            :root {
+                font-size: 15.5px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            :root {
+                font-size: 16px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                padding: 0 var(--spacing-xl);
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+                font-size: 12pt;
+            }
+
+            header {
+                background: white;
+                color: black;
+                border-bottom: 2px solid #333;
+                box-shadow: none;
+            }
+
+            header, footer, .quote-section {
+                page-break-inside: avoid;
+            }
+
+            section {
+                page-break-inside: avoid;
+            }
+
+            a::after {
+                content: " (" attr(href) ")";
+                font-size: 10pt;
+                color: #666;
+            }
+
+            .social-link {
+                background: white;
+                border: 1px solid #333;
+                color: black;
+            }
+
+            .profile-pic {
+                max-width: 120px;
+            }
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (prefers-contrast: more) {
+            :root {
+                --text-light: #333333;
+                --text-muted: #666666;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-light: #1a1a1a;
+                --bg-white: #2d2d2d;
+                --text-dark: #f0f0f0;
+                --text-light: #b0b0b0;
+                --text-muted: #808080;
+                --border-color: #404040;
+                --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            }
+
+            header {
+                background: linear-gradient(135deg, #556B2F 0%, #3d4920 100%);
+            }
+
+            .card {
+                background: #2d2d2d;
+            }
+
+            .achievement-card {
+                background: rgba(107, 142, 35, 0.15);
+            }
+
+            footer {
+                background: #252525;
+                border-top-color: #404040;
+            }
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-pic-wrapper">
+                    <img src="photo.jpg" alt="Arindam Mukherjee" class="profile-pic" />
+                </div>
+                <div class="header-text">
+                    <h1>Arindam Mukherjee</h1>
+                    <p class="position">Assistant Professor in Mathematics</p>
+                    <p class="position">Achhruram Memorial College, Jhalda</p>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📧 arindamaths [at] gmail [dot] com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>📧 arindam [at] alumni [dot] iitm [dot] ac [dot] in</span>
+                        </div>
+                    </div>
 
-  <header>
-    <h1>Arindam Mukherjee</h1>
-    <img src="photo.jpg" alt="Arindam Mukherjee" class="profile-pic">
-    <div class="contact">
-     <strong> Assistant Professor in Mathematics, Achhruram Memorial College, Jhalda</strong><br>
-      arindamaths [at] gmail [dot] com<br>
-      arindam [at] alumni [dot] iitm [dot] ac [dot] in<br>
-      <a href="https://github.com/arindamIITM" target="_blank">GitHub</a> ||
-      <a href="https://orcid.org/0000-0001-5505-6536" target="_blank">ORCID</a> ||
-      <a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/1602326" target="_blank">MathSciNet</a> ||
-      <a href="https://dblp.org/pid/93/5356-3.html" target="_blank">DBLP</a><br>
-    </div>
-  </header>
+                    <div class="social-links">
+                        <a href="https://github.com/arindamIITM" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+                        <a href="https://orcid.org/0000-0001-5505-6536" target="_blank" rel="noopener noreferrer" class="social-link">ORCID</a>
+                        <a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/1602326" target="_blank" rel="noopener noreferrer" class="social-link">MathSciNet</a>
+                        <a href="https://dblp.org/pid/93/5356-3.html" target="_blank" rel="noopener noreferrer" class="social-link">DBLP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <section>
-    <h2>Research Interest</h2>
-    <p>Public-key Cryptanalysis with a focus on Post-quantum Secure Schemes and Hardness Assumptions</p>
-  </section>
+    <main class="container">
+        <section>
+            <h2>Research Interest</h2>
+            <p class="section-intro">
+                Public-key Cryptanalysis with a focus on Post-quantum Secure Schemes and Hardness Assumptions
+            </p>
+        </section>
 
-  <section>
-    <h2>Experience</h2>
-    <p><strong>Assistant Professor in Mathematics</strong><br>
-    Achhruram Memorial College, Jhalda, Purulia, India<br>
-    Since November, 2019 </p>
-  </section>
+        <section>
+            <h2>Experience</h2>
+            <div class="card">
+                <h3 class="card-title">Assistant Professor in Mathematics</h3>
+                <p class="card-subtitle">Achhruram Memorial College, Jhalda, Purulia, India</p>
+                <p class="card-description">Since November 2019</p>
+            </div>
+        </section>
 
-  <section>
-    <h2>Education</h2>
-    <ul>
-      <li><strong>Ph.D.</strong>, IIT Madras (2018–2025) — Thesis: Memory-Efficient Attacks on Small LWE Keys, Advisor: Prof. Santanu Sarkar</li>
-      <li><strong>M.Sc. in Mathematics</strong>, IIT Madras (2016–2018)</li>
-      <li><strong>B.Sc. with Honours in Mathematics</strong>, Sidho-Kanho-Birsha University, Purulia (2013–2016)</li>
-    </ul>
-  </section>
+        <section>
+            <h2>Education</h2>
+            <div class="card">
+                <h3 class="card-title">Ph.D. in Mathematics</inherintitle>
+                <p class="card-subtitle">IIT Madras (2018–2025)</p>
+                <p class="card-description">
+                    <strong>Thesis:</strong> Memory-Efficient Attacks on Small LWE Keys<br>
+                    <strong>Advisor:</strong> Prof. Santanu Sarkar
+                </p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">M.Sc. in Mathematics</h3>
+                <p class="card-subtitle">IIT Madras (2016–2018)</p>
+            </div>
+            <div class="card">
+                <h3 class="card-title">B.Sc. with Honours in Mathematics</h3>
+                <p class="card-subtitle">Sidho-Kanho-Birsha University, Purulia (2013–2016)</p>
+            </div>
+        </section>
 
-  <section>
-    <h2>Publications</h2>
-    <ul>
-      <li> <a href="https://doi.org/10.1007/s00145-024-09516-3" target="_blank">Esser, A., <strong>Mukherjee, A.</strong> & Sarkar, S. Memory-Efficient Attacks on Small LWE Keys. <em>J Cryptol</em> 37, 36 (2024).</a> </li>
-      <li> <a href="https://doi.org/10.1007/978-981-99-8730-6_3" target="_blank">Esser, A., Girme, R., <strong>Mukherjee, A.</strong>, Sarkar, S. (2023). Memory-Efficient Attacks on Small LWE Keys. In: Guo, J., Steinfeld, R. (eds) Advances in Cryptology – ASIACRYPT 2023. ASIACRYPT 2023. Lecture Notes in Computer Science, vol 14441. Springer, Singapore. </a></li>
-    </ul>
-  </section>
+        <section>
+            <h2>Publications</h2>
+            <div class="card">
+                <p class="card-description">
+                    <a href="https://doi.org/10.1007/s00145-024-09516-3" target="_blank" rel="noopener noreferrer">
+                        Esser, A., <strong>Mukherjee, A.</strong> & Sarkar, S. (2024). Memory-Efficient Attacks on Small LWE Keys. 
+                        <em>Journal of Cryptology</em>, 37, 36.
+                    </a>
+                </p>
+            </div>
+            <div class="card">
+                <p class="card-description">
+                    <a href="https://doi.org/10.1007/978-981-99-8730-6_3" target="_blank" rel="noopener noreferrer">
+                        Esser, A., Girme, R., <strong>Mukherjee, A.</strong>, Sarkar, S. (2023). Memory-Efficient Attacks on Small LWE Keys. 
+                        In: Guo, J., Steinfeld, R. (eds) <em>Advances in Cryptology – ASIACRYPT 2023</em>. 
+                        Lecture Notes in Computer Science, vol 14441. Springer, Singapore.
+                    </a>
+                </p>
+            </div>
+        </section>
 
-  <section>
-    <h2>Talks</h2>
-    <ul>
+        <section>
+            <h2>Talks & Presentations</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <p class="card-title">Crypto Café</p>
+                    <p class="card-subtitle">November 25, 2025</p>
+                    <p class="card-description">Department of Mathematics, Florida Atlantic University</p>
+                </div>
+                <div class="card">
+                    <p class="card-title">NIWC - Lattice Based Cryptography</p>
+                    <p class="card-subtitle">July 5, 2024</p>
+                    <p class="card-description">MNNIT Allahabad</p>
+                </div>
+                <div class="card">
+                    <p class="card-title">Workshop on Lattice-based PQC</p>
+                    <p class="card-subtitle">April 2, 2024</p>
+                    <p class="card-description">Ashoka University</p>
+                </div>
+                <div class="card">
+                    <p class="card-title">Asiacrypt 2023</p>
+                    <p class="card-subtitle">December 7, 2023</p>
+                    <p class="card-description">Guangzhou, China</p>
+                </div>
+            </div>
+        </section>
 
-      <li><strong>November 25, 2025</strong> – Crypto Café, Department of Mathematics at Florida Atlantic University</li>
-      <li><strong>July 5, 2024</strong> – NIWC - Lattice Based Cryptography, MNNIT Allahabad</li>
-      <li><strong>April 2, 2024</strong> – Workshop on Lattice-based PQC, Ashoka University</li>
-      <li><strong>December 7, 2023</strong> – Asiacrypt 2023, Guangzhou, China</li>
-    </ul>
-  </section>
+        <section>
+            <h2>Teaching</h2>
+            <p class="section-intro">
+                Since November 7, 2019, serving as Assistant Professor in Mathematics at Achhruram Memorial College, Jhalda
+            </p>
+            <div class="card">
+                <h3 class="card-title">Subjects Taught</h3>
+                <ul>
+                    <li>Calculus & Linear Algebra</li>
+                    <li>Real Analysis & Abstract Algebra</li>
+                    <li>Discrete Mathematics & Numerical Analysis</li>
+                    <li>Computer Programming in C</li>
+                    <li>Algorithm Design</li>
+                    <li>Python Programming (Certificate Course)</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Academic Duties</h3>
+                <ul>
+                    <li>Examination duties under Sidho-Kanho-Birsha University</li>
+                    <li>Paper Setter & Examiner</li>
+                    <li>Head Examiner</li>
+                    <li>Integration of coding into mathematical pedagogy</li>
+                </ul>
+            </div>
+        </section>
 
-    <section>
-    <h2>Teaching</h2>
-    Since November 7, 2019, I have been serving as Assistant Professor in Mathematics at Achhruram Memorial College, Jhalda. Here I have taught foundational and advanced subjects such as Calculus, Linear Algebra, Real Analysis, Abstract Algebra, Discrete Mathematics, Numerical Analysis, and Computer Programming in C with special emphasis on Algorithm Design. As an attempt to integrate coding into mathematical pedagogy to support diverse learners, I also conducted a Certificate Course on Python Programming. Apart from regular teaching duties, I have taken up multiple examination related duties under Sidho-Kanho-Birsha University, such as Examiner, Paper Setter, and Head Examiner.
+        <section>
+            <h2>Skills & Expertise</h2>
+            <div class="skills-container">
+                <span class="skill-badge">Post-Quantum Cryptanalysis</span>
+                <span class="skill-badge">Algorithm Design</span>
+                <span class="skill-badge">Academic Writing</span>
+                <span class="skill-badge">Teaching & Mentoring</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">C Programming</span>
+                <span class="skill-badge">Mathematics</span>
+                <span class="skill-badge">Cryptography</span>
+            </div>
+        </section>
 
+        <section>
+            <h2>Achievements & Awards</h2>
+            <div class="achievement-card">
+                <p>NBHM PhD Fellowship (2018), DAE, Government of India</p>
+            </div>
+            <div class="achievement-card">
+                <p>CSIR-UGC JRF – AIR 70 (December 2017) & AIR 107 (December 2016)</p>
+            </div>
+            <div class="achievement-card">
+                <p>GATE 2018 – AIR 145</p>
+            </div>
+            <div class="achievement-card">
+                <p>JAM 2016 – AIR 156</p>
+            </div>
+        </section>
 
-  </section>
+        <section>
+            <h2>Service & Academic Activities</h2>
+            <div class="card">
+                <h3 class="card-title">Peer Review</h3>
+                <ul>
+                    <li>INDOCRYPT 2023</li>
+                    <li>ASIACRYPT 2024</li>
+                    <li>INDOCRYPT 2025</li>
+                    <li>ISEAISAP-2026</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3 class="card-title">Leadership</h3>
+                <ul>
+                    <li>Programme Committee – ISEAISAP-2026</li>
+                    <li>IQAC Coordinator – Achhruram Memorial College, Jhalda</li>
+                </ul>
+            </div>
+        </section>
 
-  <section>
-    <h2>Skills</h2>
-    <div class="skills-box">Post-Quantum Cryptanalysis</div>
-    <div class="skills-box">Algorithm Design</div>
-    <div class="skills-box">Academic Writing</div>
-    <div class="skills-box">Teaching</div>
-    <div class="skills-box">Python</div>
-    <div class="skills-box">C</div>
+        <section>
+            <h2>Educational Resources</h2>
+            <div class="card">
+                <h3 class="card-title">📄 Notes for Computer Aided Numerical Practical in C Language</h3>
+                <p class="card-description">
+                    <a href="Computer Aided Numerical Practical.pdf" target="_blank" rel="noopener noreferrer">
+                        Download PDF →
+                    </a>
+                </p>
+            </div>
+        </section>
 
-  </section>
+        <div class="quote-section">
+            <p class="quote-text">
+                "We can only see a short distance ahead, but we can see plenty there that needs to be done."
+            </p>
+            <p class="quote-author">– Alan Turing</p>
+        </div>
+    </main>
 
-  <section>
-    <h2>Achievements</h2>
-    <ul>
-      <li>NBHM PhD Fellowship (2018), DAE, Govt. of India</li>
-      <li>CSIR-UGC JRF – AIR 70 (Dec 2017) & AIR 107 (Dec 2016)</li>
-      <li>GATE 2018 – AIR 145</li>
-      <li>JAM 2016 – AIR 156</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Other Activities</h2>
-    <ul>
-      <li>Peer Review – INDOCRYPT 2023, ASIACRYPT 2024, INDOCRYPT 2025, ISEAISAP-2026</li>
-      <li>Programme Committee – ISEAISAP-2026</li>
-      <li>Served as IQAC Coordinator - Achhruram Memorial College, Jhalda</li>
-    </ul>
-  </section>
-
-
-  
-  <section>
-    <h2>Resources</h2>
-    <ul>
-      <li><a href="Computer Aided Numerical Practical.pdf" target="_blank"><strong>Notes for Computer Aided Numerical Practical in C Language</strong></a></li>
-    </ul>
-  </section>
-
-   <footer>
-    <div class="quote">
-      “We can only see a short distance ahead, but we can see plenty there that needs to be done.”<br>
-      – Alan Turing
-    </div>
-   </footer>
-
-
+    <footer>
+        <p style="font-size: 0.8rem;">Last updated: January 2026</p>
+    </footer>
 </body>
 </html>
-
