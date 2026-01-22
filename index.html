@@ -14,234 +14,30 @@
     <meta property="og:title" content="Arindam Mukherjee – Cryptography Researcher & Assistant Professor" />
     <meta property="og:description" content="Explore Arindam Mukherjee's academic profile, including post-quantum cryptography research, publications, and contact info." />
     <meta property="og:image" content="photo.jpg" />
-    
+
     <style>
         :root {
-            --primary-color: #6B8E23;
-            --primary-dark: #556B2F;
-            --primary-light: #e8f0d8;
-            --accent-color: #8FBC8F;
-            --text-dark: #2d3436;
-            --text-light: #636e72;
-            --text-muted: #95a5a6;
-            --bg-light: #fafbf9;
-            --bg-white: #ffffff;
-            --border-color: #dfe6e0;
-            --card-shadow: 0 2px 8px rgba(107, 142, 35, 0.08);
-            --card-shadow-hover: 0 4px 16px rgba(107, 142, 35, 0.12);
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2rem;
-            --spacing-xl: 3rem;
-            --border-radius: 8px;
-            --transition: all 0.3s ease;
+            --primary: #556B2F; /* Olive Green */
+            --primary-bg: #f4f7f0;
+            --text-main: #1a1a1a;
+            --text-sec: #4a4a4a;
+            --border: #e0e0e0;
+            --link: #2c5282;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+            color: var(--text-main);
+            background-color: #fff;
+            line-height: 1.5;
+            font-size: 15px;
         }
 
-        h1 {
-            font-size: clamp(1.75rem, 5vw, 2.5rem);
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: var(--spacing-md);
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-size: clamp(1.35rem, 4vw, 1.75rem);
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: var(--spacing-md);
-            margin-top: var(--spacing-lg);
-            padding-bottom: var(--spacing-sm);
-            border-bottom: 2px solid var(--primary-light);
-        }
-
-        h3 {
-            font-size: clamp(1.05rem, 3vw, 1.25rem);
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        p {
-            color: var(--text-light);
-            margin-bottom: var(--spacing-sm);
-            font-size: clamp(0.9rem, 2vw, 1rem);
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        a:hover {
-            color: var(--primary-dark);
-            text-decoration: underline;
-        }
-
-        ul, ol {
-            padding-left: var(--spacing-lg);
-            margin-bottom: var(--spacing-md);
-        }
-
-        li {
-            margin-bottom: var(--spacing-sm);
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-sm);
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                padding: 0 var(--spacing-md);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                padding: 0 var(--spacing-lg);
-            }
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-            color: #ffffff;
-            padding: var(--spacing-lg) 0;
-            margin-bottom: var(--spacing-xl);
-            box-shadow: var(--card-shadow);
-        }
-
-        .header-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-md);
-            align-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .header-content {
-                grid-template-columns: auto 1fr;
-                align-items: flex-start;
-            }
-        }
-
-        .profile-pic-wrapper {
-            display: flex;
-            justify-content: center;
-        }
-
-        @media (min-width: 768px) {
-            .profile-pic-wrapper {
-                justify-content: flex-start;
-            }
-        }
-
-        .profile-pic {
-            width: clamp(120px, 25vw, 180px);
-            height: clamp(120px, 25vw, 180px);
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            flex-shrink: 0;
-            transition: transform 0.4s ease, filter 0.4s ease, box-shadow 0.4s ease;
-            cursor: pointer;
-        }
-
-        .profile-pic:hover {
-            transform: scale(1.1) rotateZ(5deg);
-            filter: brightness(1.1) drop-shadow(0 8px 20px rgba(0, 0, 0, 0.3));
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-        }
-
-        .header-text h1 {
-            color: #ffffff;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .position {
-            font-size: clamp(0.9rem, 2.5vw, 1.05rem);
-            font-weight: 500;
-            margin-bottom: var(--spacing-md);
-            opacity: 0.98;
-            color: #ffffff;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-sm);
-            font-size: clamp(0.85rem, 2vw, 0.95rem);
-            color: #ffffff;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-xs);
-            flex-wrap: wrap;
-        }
-
-        .social-links {
-            display: flex;
-            gap: var(--spacing-sm);
-            margin-top: var(--spacing-sm);
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: var(--border-radius);
-            color: #ffffff;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: var(--transition);
-            min-height: 44px;
-            touch-action: manipulation;
-        }
-
-        .social-link:hover {
-            background: rgba(255, 255, 255, 0.25);
-            text-decoration: none;
-        }
-
-        section {
-            margin-bottom: var(--spacing-xl);
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        @keyframes fadeIn {
+        /* Animation Keyframes - Lightweight CSS only */
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(10px);
@@ -252,339 +48,243 @@
             }
         }
 
-        .section-intro {
-            color: var(--text-light);
-            font-size: clamp(0.95rem, 2vw, 1.05rem);
-            margin-bottom: var(--spacing-lg);
-            padding-bottom: var(--spacing-md);
-            border-bottom: 1px solid var(--border-color);
+        /* Apply Animation to sections */
+        section, header, footer {
+            animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0; /* Start hidden for animation */
         }
 
-        .card {
-            background: var(--bg-white);
-            border-radius: var(--border-radius);
-            padding: var(--spacing-md);
-            margin-bottom: var(--spacing-md);
-            border-left: 4px solid var(--primary-color);
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
+        /* Stagger animations slightly for a nice effect */
+        header { animation-delay: 0s; }
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+        section:nth-child(5) { animation-delay: 0.5s; }
+        section:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Compact Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
         }
 
-        @media (min-width: 768px) {
-            .card {
-                padding: var(--spacing-lg);
-            }
+        a { color: var(--link); text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; color: var(--primary); }
+
+        /* Compact Header */
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+            background: #fafafa;
+            margin-bottom: 1rem;
         }
 
-        .card:hover {
-            box-shadow: var(--card-shadow-hover);
-            transform: translateY(-2px);
+        .header-inner {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
         }
 
-        .card-title {
+        .profile-pic {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+
+        .header-info h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+            line-height: 1.2;
+        }
+
+        .role { font-weight: 600; font-size: 0.95rem; }
+        .institute { color: var(--text-sec); font-size: 0.9rem; margin-bottom: 0.5rem; }
+
+        .contact-row {
+            font-size: 0.85rem;
+            color: var(--text-sec);
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-mini {
+            font-size: 0.85rem;
             font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: var(--spacing-xs);
-            font-size: clamp(1rem, 2.5vw, 1.15rem);
-        }
-
-        .card-subtitle {
-            font-size: clamp(0.85rem, 2vw, 0.95rem);
-            color: var(--text-muted);
-            margin-bottom: var(--spacing-sm);
-            font-weight: 500;
-        }
-
-        .card-description {
-            color: var(--text-light);
-            line-height: 1.7;
-            font-size: clamp(0.9rem, 2vw, 1rem);
-        }
-
-        .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-md);
+            gap: 0.75rem;
         }
 
-        .skill-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.5rem 1rem;
-            background: linear-gradient(135deg, var(--primary-light) 0%, #f0f8e8 100%);
-            color: var(--primary-dark);
-            border-radius: 20px;
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
-            font-weight: 500;
-            border: 1px solid #d4e8c1;
-            transition: var(--transition);
-            min-height: 36px;
-            cursor: default;
+        /* Section Styling */
+        section {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f0f0f0;
         }
 
-        .skill-badge:hover {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-            color: #ffffff;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(107, 142, 35, 0.15);
+        section:last-child { border-bottom: none; }
+
+        h2 {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            border-left: 3px solid var(--primary);
+            padding-left: 0.5rem;
         }
 
-        .grid-2 {
+        .section-intro { 
+            margin-bottom: 0.75rem; 
+            color: var(--text-sec); 
+            font-size: 0.95rem;
+        }
+
+        /* Grid for Desktop */
+        .grid-layout {
             display: grid;
             grid-template-columns: 1fr;
-            gap: var(--spacing-md);
+            gap: 1.5rem;
         }
 
         @media (min-width: 768px) {
-            .grid-2 {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .grid-layout { grid-template-columns: 1fr 1fr; }
+            .header-inner { align-items: center; }
+            .contact-row { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
         }
 
-        @media (min-width: 1024px) {
-            .grid-2 {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        /* Compact Item Styling */
+        .item {
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.25rem;
+        }
+        
+        .item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #000;
         }
 
-        .achievement-card {
-            background: linear-gradient(135deg, var(--primary-light) 0%, rgba(232, 240, 216, 0.5) 100%);
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--accent-color);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        @media (min-width: 768px) {
-            .achievement-card {
-                padding: var(--spacing-lg);
-            }
-        }
-
-        .achievement-card p {
-            color: var(--text-dark);
-            margin: 0;
-            font-weight: 500;
-        }
-
-        .quote-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-            color: #ffffff;
-            padding: var(--spacing-lg) var(--spacing-md);
-            border-radius: var(--border-radius);
-            text-align: center;
-            margin: var(--spacing-xl) 0;
-            box-shadow: var(--card-shadow-hover);
-        }
-
-        @media (min-width: 768px) {
-            .quote-section {
-                padding: var(--spacing-xl) var(--spacing-lg);
-            }
-        }
-
-        .quote-text {
+        .item-sub {
+            font-size: 0.9rem;
+            color: var(--text-sec);
             font-style: italic;
-            font-size: clamp(1rem, 3vw, 1.25rem);
-            line-height: 1.8;
-            color: #ffffff;
-            margin-bottom: var(--spacing-md);
         }
 
-        .quote-author {
-            font-size: clamp(0.9rem, 2vw, 1rem);
-            opacity: 0.9;
+        .item-desc {
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+            color: #333;
+        }
+
+        /* Compact List */
+        ul {
+            padding-left: 1.2rem;
+            margin: 0.25rem 0;
+        }
+        li {
+            margin-bottom: 0.1rem;
+            font-size: 0.9rem;
+            color: var(--text-sec);
+        }
+
+        /* Skills Tags */
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        .tag {
+            background: var(--primary-bg);
+            color: var(--primary);
+            padding: 0.15rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid #dce8ce;
             font-weight: 500;
-            color: #ffffff;
         }
 
-        footer {
-            background: #f5f7f3;
-            margin-top: var(--spacing-xl);
-            padding: var(--spacing-lg) var(--spacing-md);
+        /* Achievement Row */
+        .achievement-row {
+            padding: 0.4rem 0.5rem;
+            border-left: 2px solid var(--link);
+            background-color: #f8f9fa;
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+        }
+
+        /* Quote Section */
+        .quote-box {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 4px;
             text-align: center;
-            border-top: 1px solid var(--border-color);
-            font-size: clamp(0.8rem, 2vw, 0.9rem);
-            color: var(--text-muted);
+            margin-top: 1.5rem;
+        }
+        .quote-text { font-style: italic; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .quote-author { font-size: 0.9rem; opacity: 0.9; }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #888;
+            padding: 1.5rem 0;
+            margin-top: 1rem;
+            border-top: 1px solid var(--border);
         }
 
-        @media (max-width: 480px) {
-            :root {
-                font-size: 15px;
-            }
-
-            h1 {
-                margin-bottom: var(--spacing-sm);
-            }
-
-            h2 {
-                margin-top: var(--spacing-md);
-            }
-
-            .card {
-                padding: var(--spacing-md);
-            }
-
-            .skills-container {
-                gap: var(--spacing-xs);
-            }
-
-            .skill-badge {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (min-width: 480px) and (max-width: 768px) {
-            :root {
-                font-size: 15.5px;
-            }
-        }
-
-        @media (min-width: 768px) {
-            :root {
-                font-size: 16px;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .container {
-                padding: 0 var(--spacing-xl);
-            }
-        }
-
+        /* Print Optimization */
         @media print {
-            body {
-                background: white;
-                color: black;
-                font-size: 12pt;
-            }
-
-            header {
-                background: white;
-                color: black;
-                border-bottom: 2px solid #333;
-                box-shadow: none;
-            }
-
-            header, footer, .quote-section {
-                page-break-inside: avoid;
-            }
-
-            section {
-                page-break-inside: avoid;
-            }
-
-            a::after {
-                content: " (" attr(href) ")";
-                font-size: 10pt;
-                color: #666;
-            }
-
-            .social-link {
-                background: white;
-                border: 1px solid #333;
-                color: black;
-            }
-
-            .profile-pic {
-                max-width: 120px;
-            }
-        }
-
-        a:focus-visible,
-        button:focus-visible {
-            outline: 2px solid var(--accent-color);
-            outline-offset: 2px;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        @media (prefers-contrast: more) {
-            :root {
-                --text-light: #333333;
-                --text-muted: #666666;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-light: #1a1a1a;
-                --bg-white: #2d2d2d;
-                --text-dark: #f0f0f0;
-                --text-light: #b0b0b0;
-                --text-muted: #808080;
-                --border-color: #404040;
-                --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-            }
-
-            header {
-                background: linear-gradient(135deg, #556B2F 0%, #3d4920 100%);
-            }
-
-            .card {
-                background: #2d2d2d;
-            }
-
-            .achievement-card {
-                background: rgba(107, 142, 35, 0.15);
-            }
-
-            footer {
-                background: #252525;
-                border-top-color: #404040;
-            }
+            body { font-size: 11pt; }
+            a { text-decoration: none; color: black; }
+            header { padding: 0.5rem 0; }
+            section { page-break-inside: avoid; animation: none !important; opacity: 1 !important; }
+            .profile-pic { display: none; }
+            .quote-box { background: none; color: black; border: 1px solid #ccc; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="profile-pic-wrapper">
-                    <img src="photo.jpg" alt="Arindam Mukherjee" class="profile-pic" />
-                </div>
-                <div class="header-text">
-                    <h1>Arindam Mukherjee</h1>
-                    <p class="position">Assistant Professor in Mathematics</p>
-                    <p class="position">Achhruram Memorial College, Jhalda</p>
-                    
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <span>📧 arindamaths [at] gmail [dot] com</span>
-                        </div>
-                        <div class="contact-item">
-                            <span>📧 arindam [at] alumni [dot] iitm [dot] ac [dot] in</span>
-                        </div>
-                    </div>
 
-                    <div class="social-links">
-                        <a href="https://github.com/arindamIITM" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
-                        <a href="https://orcid.org/0000-0001-5505-6536" target="_blank" rel="noopener noreferrer" class="social-link">ORCID</a>
-                        <a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/1602326" target="_blank" rel="noopener noreferrer" class="social-link">MathSciNet</a>
-                        <a href="https://dblp.org/pid/93/5356-3.html" target="_blank" rel="noopener noreferrer" class="social-link">DBLP</a>
-                    </div>
+    <header>
+        <div class="container header-inner">
+            <img src="photo.jpg" alt="Arindam Mukherjee" class="profile-pic" onerror="this.style.display='none'" />
+            <div class="header-info">
+                <h1>Arindam Mukherjee</h1>
+                <p class="role">Assistant Professor in Mathematics</p>
+                <p class="institute">Achhruram Memorial College, Jhalda</p>
+                
+                <div class="contact-row">
+                    <span>📧 arindamaths [at] gmail [dot] com</span>
+                    <span>📧 arindam [at] alumni [dot] iitm [dot] ac [dot] in</span>
+                </div>
+
+                <div class="social-mini">
+                    <a href="https://github.com/arindamIITM" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://orcid.org/0000-0001-5505-6536" target="_blank" rel="noopener noreferrer">ORCID</a>
+                    <a href="https://mathscinet.ams.org/mathscinet/MRAuthorID/1602326" target="_blank" rel="noopener noreferrer">MathSciNet</a>
+                    <a href="https://dblp.org/pid/93/5356-3.html" target="_blank" rel="noopener noreferrer">DBLP</a>
                 </div>
             </div>
         </div>
     </header>
 
     <main class="container">
+        <!-- Research Interest -->
         <section>
             <h2>Research Interest</h2>
             <p class="section-intro">
@@ -592,178 +292,194 @@
             </p>
         </section>
 
-        <section>
-            <h2>Experience</h2>
-            <div class="card">
-                <h3 class="card-title">Assistant Professor in Mathematics</h3>
-                <p class="card-subtitle">Achhruram Memorial College, Jhalda, Purulia, India</p>
-                <p class="card-description">Since November 2019</p>
-            </div>
-        </section>
+        <!-- Experience & Education Grid -->
+        <div class="grid-layout">
+            <section style="border-bottom: none;">
+                <h2>Experience</h2>
+                <div class="item">
+                    <h3 class="item-title">Assistant Professor in Mathematics</h3>
+                    <p class="item-sub">Achhruram Memorial College, Jhalda, Purulia, India</p>
+                    <p class="item-desc">Since November 2019</p>
+                </div>
+            </section>
 
-        <section>
-            <h2>Education</h2>
-            <div class="card">
-                <h3 class="card-title">Ph.D. in Mathematics</inherintitle>
-                <p class="card-subtitle">IIT Madras (2018–2025)</p>
-                <p class="card-description">
-                    <strong>Thesis:</strong> Memory-Efficient Attacks on Small LWE Keys<br>
-                    <strong>Advisor:</strong> Prof. Santanu Sarkar
-                </p>
-            </div>
-            <div class="card">
-                <h3 class="card-title">M.Sc. in Mathematics</h3>
-                <p class="card-subtitle">IIT Madras (2016–2018)</p>
-            </div>
-            <div class="card">
-                <h3 class="card-title">B.Sc. with Honours in Mathematics</h3>
-                <p class="card-subtitle">Sidho-Kanho-Birsha University, Purulia (2013–2016)</p>
-            </div>
-        </section>
+            <section style="border-bottom: none;">
+                <h2>Education</h2>
+                <div class="item">
+                    <h3 class="item-title">Ph.D. in Mathematics</h3>
+                    <p class="item-sub">IIT Madras (2018–2025)</p>
+                    <div class="item-desc">
+                        <strong>Thesis:</strong> Memory-Efficient Attacks on Small LWE Keys<br>
+                        <strong>Advisor:</strong> Prof. Santanu Sarkar
+                    </div>
+                </div>
+                <div class="item">
+                    <h3 class="item-title">M.Sc. in Mathematics</h3>
+                    <p class="item-sub">IIT Madras (2016–2018)</p>
+                </div>
+                <div class="item">
+                    <h3 class="item-title">B.Sc. with Honours in Mathematics</h3>
+                    <p class="item-sub">Sidho-Kanho-Birsha University, Purulia (2013–2016)</p>
+                </div>
+            </section>
+        </div>
+        
+        <hr style="border: 0; border-top: 1px solid #f0f0f0;">
 
+        <!-- Publications -->
         <section>
             <h2>Publications</h2>
-            <div class="card">
-                <p class="card-description">
+            <div class="item">
+                <div class="item-desc">
                     <a href="https://doi.org/10.1007/s00145-024-09516-3" target="_blank" rel="noopener noreferrer">
                         Esser, A., <strong>Mukherjee, A.</strong> & Sarkar, S. (2024). Memory-Efficient Attacks on Small LWE Keys. 
                         <em>Journal of Cryptology</em>, 37, 36.
                     </a>
-                </p>
+                </div>
             </div>
-            <div class="card">
-                <p class="card-description">
+            <div class="item">
+                <div class="item-desc">
                     <a href="https://doi.org/10.1007/978-981-99-8730-6_3" target="_blank" rel="noopener noreferrer">
                         Esser, A., Girme, R., <strong>Mukherjee, A.</strong>, Sarkar, S. (2023). Memory-Efficient Attacks on Small LWE Keys. 
                         In: Guo, J., Steinfeld, R. (eds) <em>Advances in Cryptology – ASIACRYPT 2023</em>. 
                         Lecture Notes in Computer Science, vol 14441. Springer, Singapore.
                     </a>
-                </p>
+                </div>
             </div>
         </section>
 
+        <!-- Talks & Presentations -->
         <section>
             <h2>Talks & Presentations</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <p class="card-title">Crypto Café</p>
-                    <p class="card-subtitle">November 25, 2025</p>
-                    <p class="card-description">Department of Mathematics, Florida Atlantic University</p>
+            <div class="grid-layout">
+                <div class="item">
+                    <p class="item-title">Crypto Café</p>
+                    <p class="item-sub">November 25, 2025</p>
+                    <p class="item-desc">Department of Mathematics, Florida Atlantic University</p>
                 </div>
-                <div class="card">
-                    <p class="card-title">NIWC - Lattice Based Cryptography</p>
-                    <p class="card-subtitle">July 5, 2024</p>
-                    <p class="card-description">MNNIT Allahabad</p>
+                <div class="item">
+                    <p class="item-title">NIWC - Lattice Based Cryptography</p>
+                    <p class="item-sub">July 5, 2024</p>
+                    <p class="item-desc">MNNIT Allahabad</p>
                 </div>
-                <div class="card">
-                    <p class="card-title">Workshop on Lattice-based PQC</p>
-                    <p class="card-subtitle">April 2, 2024</p>
-                    <p class="card-description">Ashoka University</p>
+                <div class="item">
+                    <p class="item-title">Workshop on Lattice-based PQC</p>
+                    <p class="item-sub">April 2, 2024</p>
+                    <p class="item-desc">Ashoka University</p>
                 </div>
-                <div class="card">
-                    <p class="card-title">Asiacrypt 2023</p>
-                    <p class="card-subtitle">December 7, 2023</p>
-                    <p class="card-description">Guangzhou, China</p>
+                <div class="item">
+                    <p class="item-title">Asiacrypt 2023</p>
+                    <p class="item-sub">December 7, 2023</p>
+                    <p class="item-desc">Guangzhou, China</p>
                 </div>
             </div>
         </section>
 
+        <!-- Teaching -->
         <section>
             <h2>Teaching</h2>
             <p class="section-intro">
                 Since November 7, 2019, serving as Assistant Professor in Mathematics at Achhruram Memorial College, Jhalda. Currently, I am motivated by the goal of integrating of computer programming into mathematical pedagogy.
             </p>
-            <div class="card">
-                <h3 class="card-title">Subjects Taught</h3>
-                <ul>
-                    <li>Calculus & Linear Algebra</li>
-                    <li>Real Analysis & Abstract Algebra</li>
-                    <li>Discrete Mathematics & Numerical Analysis</li>
-                    <li>Computer Programming in C</li>
-                    <li>Algorithm Design</li>
-                    <li>Python Programming (Certificate Course)</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3 class="card-title">Academic Duties under Sidho-Kanho-Birsha University</h3>
-                <ul>
-                    <li>Paper Setter</li>
-                    <li>Examiner</li>
-                    <li>Head Examiner</li>
-                </ul>
+            <div class="grid-layout">
+                <div>
+                    <h3 class="item-title" style="font-size: 0.95rem; margin-bottom: 0.5rem;">Subjects Taught</h3>
+                    <ul>
+                        <li>Calculus & Linear Algebra</li>
+                        <li>Real Analysis & Abstract Algebra</li>
+                        <li>Discrete Mathematics & Numerical Analysis</li>
+                        <li>Computer Programming in C</li>
+                        <li>Algorithm Design</li>
+                        <li>Python Programming (Certificate Course)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="item-title" style="font-size: 0.95rem; margin-bottom: 0.5rem;">Academic Duties under Sidho-Kanho-Birsha University</h3>
+                    <ul>
+                        <li>Paper Setter</li>
+                        <li>Examiner</li>
+                        <li>Head Examiner</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
+        <!-- Skills -->
         <section>
             <h2>Skills & Expertise</h2>
-            <div class="skills-container">
-                <span class="skill-badge">Post-Quantum Cryptanalysis</span>
-                <span class="skill-badge">Algorithm Design</span>
-                <span class="skill-badge">Academic Writing</span>
-                <span class="skill-badge">Teaching & Mentoring</span>
-                <span class="skill-badge">Python</span>
-                <span class="skill-badge">C Programming</span>
+            <div class="tags">
+                <span class="tag">Post-Quantum Cryptanalysis</span>
+                <span class="tag">Algorithm Design</span>
+                <span class="tag">Academic Writing</span>
+                <span class="tag">Teaching & Mentoring</span>
+                <span class="tag">Python</span>
+                <span class="tag">C Programming</span>
             </div>
         </section>
 
+        <!-- Achievements -->
         <section>
             <h2>Achievements & Awards</h2>
-            <div class="achievement-card">
-                <p>NBHM PhD Fellowship (2018), DAE, Government of India</p>
+            <div class="achievement-row">
+                NBHM PhD Fellowship (2018), DAE, Government of India
             </div>
-            <div class="achievement-card">
-                <p>CSIR-UGC JRF – AIR 70 (December 2017) & AIR 107 (December 2016)</p>
+            <div class="achievement-row">
+                CSIR-UGC JRF – AIR 70 (December 2017) & AIR 107 (December 2016)
             </div>
-            <div class="achievement-card">
-                <p>GATE 2018 – AIR 145</p>
+            <div class="achievement-row">
+                GATE 2018 – AIR 145
             </div>
-            <div class="achievement-card">
-                <p>JAM 2016 – AIR 156</p>
+            <div class="achievement-row">
+                JAM 2016 – AIR 156
             </div>
         </section>
 
+        <!-- Service -->
         <section>
             <h2>Service & Academic Activities</h2>
-            <div class="card">
-                <h3 class="card-title">Peer Review</h3>
-                <ul>
-                    <li>INDOCRYPT 2023</li>
-                    <li>ASIACRYPT 2024</li>
-                    <li>INDOCRYPT 2025</li>
-                    <li>ISEAISAP-2026</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3 class="card-title">Leadership</h3>
-                <ul>
-                    <li>Programme Committee – ISEAISAP-2026</li>
-                    <li>IQAC Coordinator – Achhruram Memorial College, Jhalda</li>
-                </ul>
+            <div class="grid-layout">
+                <div>
+                    <h3 class="item-title" style="font-size: 0.95rem; margin-bottom: 0.5rem;">Peer Review</h3>
+                    <ul>
+                        <li>INDOCRYPT 2023</li>
+                        <li>ASIACRYPT 2024</li>
+                        <li>INDOCRYPT 2025</li>
+                        <li>ISEAISAP-2026</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="item-title" style="font-size: 0.95rem; margin-bottom: 0.5rem;">Leadership</h3>
+                    <ul>
+                        <li>Programme Committee – ISEAISAP-2026</li>
+                        <li>IQAC Coordinator – Achhruram Memorial College, Jhalda</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
+        <!-- Educational Resources -->
         <section>
             <h2>Educational Resources</h2>
-            <div class="card">
-                <h3 class="card-title">📄 Notes for Computer Aided Numerical Practical in C Language</h3>
-                <p class="card-description">
+            <div class="item">
+                <div class="item-desc">
                     <a href="Computer Aided Numerical Practical.pdf" target="_blank" rel="noopener noreferrer">
-                        Download PDF →
+                        📄 Notes for Computer Aided Numerical Practical in C Language
                     </a>
-                </p>
+                </div>
             </div>
         </section>
 
-        <div class="quote-section">
-            <p class="quote-text">
-                "We can only see a short distance ahead, but we can see plenty there that needs to be done."
-            </p>
+        <!-- Quote -->
+        <div class="quote-box">
+            <p class="quote-text">"We can only see a short distance ahead, but we can see plenty there that needs to be done."</p>
             <p class="quote-author">– Alan Turing</p>
         </div>
+
     </main>
 
     <footer>
-        <p style="font-size: 0.8rem;">Last updated: January 2026</p>
+        <p>Last updated: January 2026</p>
     </footer>
+
 </body>
 </html>
