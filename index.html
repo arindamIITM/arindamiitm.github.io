@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arindam Mukherjee - Cryptography Researcher</title>
+    <title>Arindam Mukherjee – Cryptography Researcher & Assistant Professor in Mathematics</title>
+    <link rel="icon" type="image/png" href="favicon.png">
     
     <!-- SEO Meta Tags -->
     <meta name="title" content="Arindam Mukherjee – Cryptography Researcher & Assistant Professor in Mathematics" />
-    <meta name="description" content="Official academic page of Arindam Mukherjee, PhD researcher in post-quantum cryptography and Assistant Professor in Mathematics. Includes research, publications, and talks." />
+    <meta name="description" content="Official academic page of Arindam Mukherjee, Assistant Professor in Mathematics and researcher in post-quantum cryptography. Includes research, publications, talks, teaching, and academic activities." />
     <meta name="keywords" content="Arindam Mukherjee, Cryptography, Post-Quantum, LWE, Lattice, IIT Madras, Mathematics, Assistant Professor, Academic Research" />
     <meta name="author" content="Arindam Mukherjee" />
     <meta property="og:type" content="website" />
@@ -160,7 +161,7 @@
         }
 
         @media (min-width: 768px) {
-            .grid-layout { grid-template-columns: 1fr 1fr; }
+            .grid-layout { grid-template-columns: 1fr 1fr 1fr; }
             .header-inner { align-items: center; }
             .contact-row { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
         }
@@ -188,6 +189,57 @@
             margin-top: 0.2rem;
             color: #333;
         }
+       /* Book Section */
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+.book-cover {
+    width: 180px;
+    height: auto;
+    max-height: 270px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.book-cover:hover {
+    transform: scale(1.03);
+}
+
+.book-info {
+    width: 100%;
+}
+
+.book-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 0.4rem;
+}
+
+.book-authors {
+    font-size: 0.9rem;
+    color: var(--text-sec);
+    margin-bottom: 0.6rem;
+}
+
+.book-details {
+    font-size: 0.85rem;
+    color: var(--text-sec);
+    line-height: 1.7;
+}
+
+.book-details strong {
+    color: var(--text-main);
+}
 
         /* Compact List */
         ul {
@@ -275,16 +327,17 @@
     </header>
 
     <main class="container">
-        <!-- Research Interest -->
-        <section>
-            <h2>Research Interest</h2>
-            <p class="section-intro">
-                Public-key Cryptanalysis with a focus on Post-quantum Secure Schemes and Hardness Assumptions
-            </p>
-        </section>
+        
 
         <!-- Experience & Education Grid -->
         <div class="grid-layout">
+        <!-- Research Interest -->
+            <section style="border-bottom: none;">
+                <h2>Research Interest</h2>
+                <p class="section-intro">
+                    Public-key Cryptanalysis with a focus on Post-quantum Secure Schemes and Hardness Assumptions
+                </p>
+            </section>
             <section style="border-bottom: none;">
                 <h2>Experience</h2>
                 <div class="item">
@@ -315,10 +368,11 @@
         </div>
         
         <hr style="border: 0; border-top: 1px solid #f0f0f0;">
-
-        <!-- Publications -->
+        
+         <div class="grid-layout">
+         <!-- Publications -->
         <section>
-            <h2>Publications</h2>
+            <h2>Publications & Preprints</h2>
             <div class="item">
                 <div class="item-desc">
                     <a href="https://eprint.iacr.org/2026/1554" target="_blank" rel="noopener noreferrer">
@@ -343,7 +397,7 @@
             <div class="item">
                 <div class="item-desc">
                     <a href="https://doi.org/10.1007/s00145-024-09516-3" target="_blank" rel="noopener noreferrer">
-                        Esser, A., <strong>Mukherjee, A.</strong> & Sarkar, S. (2024). Memory-Efficient Attacks on Small LWE Keys. 
+                        Esser, A., <strong>Mukherjee, A.</strong>, &#38; Sarkar, S. (2024). Memory-Efficient Attacks on Small LWE Keys. 
                         <em>Journal of Cryptology</em>, 37, 36.
                     </a>
                 </div>
@@ -351,7 +405,7 @@
             <div class="item">
                 <div class="item-desc">
                     <a href="https://doi.org/10.1007/978-981-99-8730-6_3" target="_blank" rel="noopener noreferrer">
-                        Esser, A., Girme, R., <strong>Mukherjee, A.</strong>, Sarkar, S. (2023). Memory-Efficient Attacks on Small LWE Keys. 
+                        Esser, A., Girme, R., <strong>Mukherjee, A.</strong>, &#38; Sarkar, S. (2023). Memory-Efficient Attacks on Small LWE Keys. 
                         In: Guo, J., Steinfeld, R. (eds) <em>Advances in Cryptology – ASIACRYPT 2023</em>. 
                         Lecture Notes in Computer Science, vol 14441. Springer, Singapore.
                     </a>
@@ -359,32 +413,73 @@
             </div>
         </section>
 
-        <!-- Talks & Presentations -->
-        <section>
-            <h2>Talks & Presentations</h2>
-            <div class="grid-layout">
-                <div class="item">
-                    <p class="item-title">Crypto Café</p>
-                    <p class="item-sub">November 25, 2025</p>
-                    <p class="item-desc">Department of Mathematics, Florida Atlantic University</p>
-                </div>
-                <div class="item">
-                    <p class="item-title">NIWC - Lattice Based Cryptography</p>
-                    <p class="item-sub">July 5, 2024</p>
-                    <p class="item-desc">MNNIT Allahabad</p>
-                </div>
-                <div class="item">
-                    <p class="item-title">Workshop on Lattice-based PQC</p>
-                    <p class="item-sub">April 2, 2024</p>
-                    <p class="item-desc">Ashoka University</p>
-                </div>
-                <div class="item">
-                    <p class="item-title">Asiacrypt 2023</p>
-                    <p class="item-sub">December 7, 2023</p>
-                    <p class="item-desc">Guangzhou, China</p>
-                </div>
+
+        
+        <section style="border-bottom: none;">
+                <h2>Talks & Presentations</h2>
+                <div class="achievement-row">
+                Crypto Café, Department of Mathematics, Florida Atlantic University on November 25, 2025
             </div>
-        </section>
+            <div class="achievement-row">
+                NIWC - Lattice Based Cryptography, MNNIT Allahabad on July 5, 2024
+            </div>
+            <div class="achievement-row">
+                Workshop on Lattice-based PQC, Ashoka University on April 2, 2024
+            </div>
+            <div class="achievement-row">
+                Asiacrypt 2023, Guangzhou, China on December 7, 2023
+            </div>
+            </section>
+            
+        <section style="border-bottom: none;">
+    <h2>Book</h2>
+
+    <div class="book-card">
+
+        <!-- Book Cover -->
+        <img 
+            src="book-cover.png" 
+            alt="Front cover of Foundations of Classical Dynamics and Motion of Rigid Body" 
+            class="book-cover"
+            onerror="this.style.display='none'"
+        />
+
+        <!-- Book Information -->
+        <div class="book-info">
+
+            <h3 class="book-title">
+                Foundations of Classical Dynamics and Motion of Rigid Body
+            </h3>
+
+            <p class="book-authors">
+                <strong>Authors:</strong> Arindam Mukherjee, Prasanta Choudhury
+            </p>
+
+            <div class="book-details">
+                <p>
+                    <strong>Publisher:</strong> Techno World
+                </p>
+
+                <p>
+                    <strong>ISBN:</strong> 978-93-89314-93-9
+                </p>
+
+                <p>
+                    <strong>Year:</strong> 2025
+                </p>
+
+              
+            </div>
+
+        </div>
+
+    </div>
+</section>
+        </div>
+
+       
+
+       
 
         <!-- Teaching -->
         <section>
@@ -413,6 +508,16 @@
                         <li>Examiner</li>
                         <li>Head Examiner</li>
                     </ul>
+                </div>
+                <div>
+                    <h3 class="item-title" style="font-size: 0.95rem; margin-bottom: 0.5rem;">Educational Resources</h3>
+                    <div class="item">
+                <div class="item-desc">
+                    <a href="Computer Aided Numerical Practical.pdf" target="_blank" rel="noopener noreferrer">
+                        📄 Notes for Computer Aided Numerical Practical in C Language
+                    </a>
+                </div>
+            </div>
                 </div>
             </div>
         </section>
@@ -446,51 +551,32 @@
                 JAM 2016 – AIR 156
             </div>
             </section>
+            
+            <section style="border-bottom: none;">
+            <h2>Service & Academic Activities</h2>
+            <div class="achievement-row">
+            Peer Review: INDOCRYPT 2023, ASIACRYPT 2024, INDOCRYPT 2025, ISEAISAP 2026, ASIACRYPT 2026
+        </div>
+        <div class="achievement-row">
+            Programme Committee: ISEAISAP-2026
+        </div>
+        <div class="achievement-row">
+            IQAC Coordinator – Achhruram Memorial College, Jhalda
+        </div>
+        </section>
+        </div>
+        
         </div>
         
         <hr style="border: 0; border-top: 1px solid #f0f0f0;">
 
-        <!-- Service -->
-        <section>
-            <h2>Service & Academic Activities</h2>
-            <div class="grid-layout">
-                <div>
-                    <h3 class="item-title" style="font-size: 0.95rem; margin-bottom: 0.5rem;">Peer Review</h3>
-                    <ul>
-                        <li>INDOCRYPT 2023</li>
-                        <li>ASIACRYPT 2024</li>
-                        <li>INDOCRYPT 2025</li>
-                        <li>ISEAISAP 2026</li>
-                        <li>ASIACRYPT 2026</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="item-title" style="font-size: 0.95rem; margin-bottom: 0.5rem;">Leadership</h3>
-                    <ul>
-                        <li>Programme Committee – ISEAISAP-2026</li>
-                        <li>IQAC Coordinator – Achhruram Memorial College, Jhalda</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Educational Resources -->
-        <section>
-            <h2>Educational Resources</h2>
-            <div class="item">
-                <div class="item-desc">
-                    <a href="Computer Aided Numerical Practical.pdf" target="_blank" rel="noopener noreferrer">
-                        📄 Notes for Computer Aided Numerical Practical in C Language
-                    </a>
-                </div>
-            </div>
-        </section>
+        
 
 
     </main>
 
     <footer>
-        <p>Last updated: February 2026</p>
+        <p>Last updated: August 2026</p>
     </footer>
 
 </body>
