@@ -4,64 +4,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arindam Mukherjee – Cryptography Researcher &amp; Assistant Professor in Mathematics</title>
-    
+
     <!-- SEO Meta Tags -->
     <meta name="title" content="Arindam Mukherjee – Cryptography Researcher &amp; Assistant Professor in Mathematics" />
     <meta name="description" content="Official academic page of Arindam Mukherjee, Assistant Professor in Mathematics and researcher in post-quantum cryptography. Includes research, publications, talks, teaching, and academic activities." />
     <meta name="keywords" content="Arindam Mukherjee, Cryptography, Post-Quantum, LWE, Lattice, IIT Madras, Mathematics, Assistant Professor, Academic Research" />
     <meta name="author" content="Arindam Mukherjee" />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://arindamiitm.github.io/" />
     <meta property="og:title" content="Arindam Mukherjee – Cryptography Researcher &amp; Assistant Professor" />
     <meta property="og:description" content="Explore Arindam Mukherjee's academic profile, including post-quantum cryptography research, publications, and contact info." />
-    <meta property="og:image" content="photo.jpg" />
+    <meta property="og:image" content="https://arindamiitm.github.io/photo.jpg" />
+    <link rel="icon" href="favicon.ico" />
+
+    <!-- Lets Internet Explorer 8 and older style the HTML5 elements; ignored by every other browser. -->
+    <!--[if lt IE 9]><script>document.createElement('header');document.createElement('main');document.createElement('section');document.createElement('footer');</script><![endif]-->
 
     <style>
-        :root {
-            --primary: #556B2F; /* Olive Green */
-            --primary-bg: #f4f7f0;
-            --text-main: #1a1a1a;
-            --text-sec: #4a4a4a;
-            --border: #e0e0e0;
-            --link: #2c5282;
-        }
+        /* Colours are written out directly (no CSS variables) so very old browsers get them too.
+           Olive #556B2F, olive tint #f4f7f0, text #1a1a1a / #4a4a4a, border #e0e0e0, link #2c5282 */
 
         /* Reset & Base */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        * { margin: 0; padding: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+        header, main, section, footer { display: block; }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Oxygen", "Ubuntu", "Cantarell", sans-serif;
-            color: var(--text-main);
+            color: #1a1a1a;
             background-color: #fff;
             line-height: 1.5;
             font-size: 15px;
         }
 
-        /* Animation Keyframes - Lightweight CSS only */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Lattice background: a fixed canvas behind everything, drawn by the script at the end.
+           Without JavaScript or canvas support it simply stays empty. */
+        #bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
         }
 
-        /* Apply Animation to sections */
-        section, header, footer {
-            animation: fadeInUp 0.6s ease-out forwards;
-            opacity: 0; /* Start hidden for animation */
+        /* Fade-in on load. It lives inside this media query on purpose: browsers too old to
+           understand the query skip the whole block, so they never hide the content, and people
+           who ask their system for reduced motion don't get the animation either. */
+        @media (prefers-reduced-motion: no-preference) {
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            section, header, footer {
+                animation: fadeInUp 0.6s ease-out both;
+            }
+            section:nth-child(1) { animation-delay: 0.1s; }
+            section:nth-child(2) { animation-delay: 0.2s; }
+            section:nth-child(3) { animation-delay: 0.3s; }
+            section:nth-child(4) { animation-delay: 0.4s; }
+            section:nth-child(5) { animation-delay: 0.5s; }
+            section:nth-child(6) { animation-delay: 0.6s; }
         }
-
-        /* Stagger animations slightly for a nice effect */
-        header { animation-delay: 0s; }
-        section:nth-child(1) { animation-delay: 0.1s; }
-        section:nth-child(2) { animation-delay: 0.2s; }
-        section:nth-child(3) { animation-delay: 0.3s; }
-        section:nth-child(4) { animation-delay: 0.4s; }
-        section:nth-child(5) { animation-delay: 0.5s; }
-        section:nth-child(6) { animation-delay: 0.6s; }
 
         /* Compact Container */
         .container {
@@ -70,62 +74,62 @@
             padding: 0 1rem;
         }
 
-        a { color: var(--link); text-decoration: none; font-weight: 500; }
-        a:hover { text-decoration: underline; color: var(--primary); }
+        a { color: #2c5282; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; color: #556B2F; }
 
-        /* Compact Header */
+        /* Compact Header (slightly see-through so the lattice shows faintly) */
         header {
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid #e0e0e0;
             padding: 1.5rem 0;
             background: #fafafa;
+            background: rgba(250, 250, 250, 0.88);
             margin-bottom: 1rem;
         }
 
-        .header-inner {
-            display: flex;
-            gap: 1.5rem;
-            align-items: flex-start;
-        }
+        .header-inner { overflow: hidden; }
 
         .profile-pic {
+            float: left;
             width: 100px;
             height: 100px;
+            margin-right: 1.5rem;
             border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--primary);
-            flex-shrink: 0;
+            border: 2px solid #556B2F;
+            -webkit-transition: -webkit-transform 0.3s ease;
             transition: transform 0.3s ease;
         }
-        
+
         .profile-pic:hover {
+            -webkit-transform: scale(1.05);
+            -ms-transform: scale(1.05);
             transform: scale(1.05);
         }
 
+        .header-info { overflow: hidden; }
+
         .header-info h1 {
             font-size: 1.5rem;
-            color: var(--primary);
+            color: #556B2F;
             margin-bottom: 0.2rem;
             line-height: 1.2;
         }
 
         .role { font-weight: 600; font-size: 0.95rem; }
-        .institute { color: var(--text-sec); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .institute { color: #4a4a4a; font-size: 0.9rem; margin-bottom: 0.5rem; }
 
         .contact-row {
             font-size: 0.85rem;
-            color: var(--text-sec);
-            display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
+            color: #4a4a4a;
             margin-bottom: 0.5rem;
         }
 
         .social-mini {
             font-size: 0.85rem;
             font-weight: 600;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
+        }
+        .social-mini a {
+            display: inline-block;
+            margin-right: 0.75rem;
         }
 
         /* Section Styling */
@@ -140,29 +144,29 @@
             font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--primary);
+            color: #556B2F;
             margin-bottom: 0.75rem;
-            border-left: 3px solid var(--primary);
+            border-left: 3px solid #556B2F;
             padding-left: 0.5rem;
         }
 
-        .section-intro { 
-            margin-bottom: 0.75rem; 
-            color: var(--text-sec); 
+        .section-intro {
+            margin-bottom: 0.75rem;
+            color: #4a4a4a;
             font-size: 0.95rem;
         }
 
-        /* Grid for Desktop */
+        /* One column on phones and tablets; three columns on wide screens.
+           Browsers without CSS grid just show the single column. */
         .grid-layout {
             display: grid;
             grid-template-columns: 1fr;
+            grid-gap: 1.5rem;
             gap: 1.5rem;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 900px) {
             .grid-layout { grid-template-columns: 1fr 1fr 1fr; }
-            .header-inner { align-items: center; }
-            .contact-row { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
         }
 
         /* Compact Item Styling */
@@ -170,7 +174,7 @@
             margin-bottom: 0.75rem;
             padding-bottom: 0.25rem;
         }
-        
+
         .item-title {
             font-weight: 600;
             font-size: 1rem;
@@ -179,7 +183,7 @@
 
         .item-sub {
             font-size: 0.9rem;
-            color: var(--text-sec);
+            color: #4a4a4a;
             font-style: italic;
         }
 
@@ -188,57 +192,52 @@
             margin-top: 0.2rem;
             color: #333;
         }
-       /* Book Section */
-.book-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0.5rem 0;
-}
 
-.book-cover {
-    width: 180px;
-    height: auto;
-    max-height: 270px;
-    object-fit: cover;
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
-}
+        /* Book Section */
+        .book-card {
+            text-align: center;
+            padding: 0.5rem 0;
+        }
 
-.book-cover:hover {
-    transform: scale(1.03);
-}
+        .book-cover {
+            display: block;
+            width: 180px;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 3px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+            -webkit-transition: -webkit-transform 0.3s ease;
+            transition: transform 0.3s ease;
+        }
 
-.book-info {
-    width: 100%;
-}
+        .book-cover:hover {
+            -webkit-transform: scale(1.03);
+            -ms-transform: scale(1.03);
+            transform: scale(1.03);
+        }
 
-.book-title {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #000;
-    margin-bottom: 0.4rem;
-}
+        .book-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 0.4rem;
+        }
 
-.book-authors {
-    font-size: 0.9rem;
-    color: var(--text-sec);
-    margin-bottom: 0.6rem;
-}
+        .book-authors {
+            font-size: 0.9rem;
+            color: #4a4a4a;
+            margin-bottom: 0.6rem;
+        }
 
-.book-details {
-    font-size: 0.85rem;
-    color: var(--text-sec);
-    line-height: 1.7;
-}
+        .book-details {
+            font-size: 0.85rem;
+            color: #4a4a4a;
+            line-height: 1.7;
+        }
 
-.book-details strong {
-    color: var(--text-main);
-}
+        .book-details strong { color: #1a1a1a; }
 
         /* Compact List */
         ul {
@@ -248,18 +247,15 @@
         li {
             margin-bottom: 0.1rem;
             font-size: 0.9rem;
-            color: var(--text-sec);
+            color: #4a4a4a;
         }
 
         /* Skills Tags */
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-        }
         .tag {
-            background: var(--primary-bg);
-            color: var(--primary);
+            display: inline-block;
+            margin: 0 0.4rem 0.4rem 0;
+            background: #f4f7f0;
+            color: #556B2F;
             padding: 0.15rem 0.6rem;
             border-radius: 4px;
             font-size: 0.85rem;
@@ -270,23 +266,11 @@
         /* Achievement Row */
         .achievement-row {
             padding: 0.4rem 0.5rem;
-            border-left: 2px solid var(--link);
+            border-left: 2px solid #2c5282;
             background-color: #f8f9fa;
             margin-bottom: 0.4rem;
             font-size: 0.9rem;
         }
-
-        /* Quote Section */
-        .quote-box {
-            background-color: var(--primary);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 4px;
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-        .quote-text { font-style: italic; font-size: 1.1rem; margin-bottom: 0.5rem; }
-        .quote-author { font-size: 0.9rem; opacity: 0.9; }
 
         /* Footer */
         footer {
@@ -295,22 +279,26 @@
             color: #888;
             padding: 1.5rem 0;
             margin-top: 1rem;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid #e0e0e0;
         }
 
-     
+        @media print {
+            #bg { display: none; }
+        }
     </style>
 </head>
 <body>
 
+    <canvas id="bg" aria-hidden="true"></canvas>
+
     <header>
         <div class="container header-inner">
-            <img src="photo.jpg" alt="Arindam Mukherjee" class="profile-pic" onerror="this.style.display='none'" />
+            <img src="photo.jpg" width="100" height="100" alt="Arindam Mukherjee" class="profile-pic" onerror="this.style.display='none'" />
             <div class="header-info">
                 <h1>Arindam Mukherjee</h1>
                 <p class="role">Assistant Professor in Mathematics</p>
                 <p class="institute">Achhruram Memorial College, Jhalda</p>
-                
+
                 <div class="contact-row">
                     <span>arindamaths [at] gmail [dot] com</span>
                 </div>
@@ -326,7 +314,7 @@
     </header>
 
     <main class="container">
-        
+
 
         <!-- Experience & Education Grid -->
         <div class="grid-layout">
@@ -368,9 +356,9 @@
                 </div>
             </section>
         </div>
-        
+
         <hr style="border: 0; border-top: 1px solid #f0f0f0;">
-        
+
          <div class="grid-layout">
          <!-- Publications -->
         <section>
@@ -399,7 +387,7 @@
             <div class="achievement-row">
                 <div class="item-desc">
                     <a href="https://doi.org/10.1007/s00145-024-09516-3" target="_blank" rel="noopener noreferrer">
-                        Esser, A., <strong>Mukherjee, A.</strong>, &#38; Sarkar, S. (2024). Memory-Efficient Attacks on Small LWE Keys. 
+                        Esser, A., <strong>Mukherjee, A.</strong>, &#38; Sarkar, S. (2024). Memory-Efficient Attacks on Small LWE Keys.
                         <em>Journal of Cryptology</em>, 37, 36.
                     </a>
                 </div>
@@ -407,8 +395,8 @@
             <div class="achievement-row">
                 <div class="item-desc">
                     <a href="https://doi.org/10.1007/978-981-99-8730-6_3" target="_blank" rel="noopener noreferrer">
-                        Esser, A., Girme, R., <strong>Mukherjee, A.</strong>, &#38; Sarkar, S. (2023). Memory-Efficient Attacks on Small LWE Keys. 
-                        In: Guo, J., Steinfeld, R. (eds) <em>Advances in Cryptology – ASIACRYPT 2023</em>. 
+                        Esser, A., Girme, R., <strong>Mukherjee, A.</strong>, &#38; Sarkar, S. (2023). Memory-Efficient Attacks on Small LWE Keys.
+                        In: Guo, J., Steinfeld, R. (eds) <em>Advances in Cryptology – ASIACRYPT 2023</em>.
                         Lecture Notes in Computer Science, vol 14441. Springer, Singapore.
                     </a>
                 </div>
@@ -416,7 +404,7 @@
         </section>
 
 
-        
+
         <section style="border-bottom: none;">
                 <h2>Talks &amp; Presentations</h2>
                 <div class="achievement-row">
@@ -432,16 +420,19 @@
                 Asiacrypt 2023, Guangzhou, China on December 7, 2023
             </div>
             </section>
-            
+
         <section style="border-bottom: none;">
     <h2>Book</h2>
 
     <div class="book-card">
 
         <!-- Book Cover -->
-        <img 
-            src="book-cover.png" 
-            alt="Front cover of Foundations of Classical Dynamics and Motion of Rigid Body" 
+        <img
+            src="book-cover.jpg"
+            width="180"
+            height="218"
+            loading="lazy"
+            alt="Front cover of Foundations of Classical Dynamics and Motion of Rigid Body"
             class="book-cover"
             onerror="this.style.display='none'"
         />
@@ -470,7 +461,7 @@
                     <strong>Year:</strong> 2025
                 </p>
 
-              
+
             </div>
 
         </div>
@@ -479,9 +470,9 @@
 </section>
         </div>
 
-       
 
-       
+
+
 
         <!-- Teaching -->
         <section>
@@ -492,7 +483,7 @@
             </p>
             <div class="grid-layout">
                 <div>
-                <div class="achievement-row">           
+                <div class="achievement-row">
                     <h3 class="item-title" style="font-size: 0.95rem; margin-bottom: 0.5rem;">Subjects Taught</h3>
                     <ul>
                         <li>Calculus</li>
@@ -505,24 +496,24 @@
                     </ul>
                      </div>
                 </div>
-                
+
                 <div>
-                <div class="achievement-row"> 
+                <div class="achievement-row">
                     <h3 class="item-title" style="font-size: 0.95rem; margin-bottom: 0.5rem;">Academic Duties under Sidho-Kanho-Birsha University</h3>
                     <ul>
                         <li>Paper Setter</li>
                         <li>Examiner</li>
                         <li>Head Examiner</li>
                     </ul>
-                </div>    
+                </div>
                 </div>
                 <div>
-                <div class="achievement-row"> 
+                <div class="achievement-row">
                     <h3 class="item-title" style="font-size: 0.95rem; margin-bottom: 0.5rem;">Educational Resources</h3>
                     <div class="item">
                 <div class="item-desc">
                     <a href="Computer Aided Numerical Practical.pdf" target="_blank" rel="noopener noreferrer">
-                        📄 Notes for Computer Aided Numerical Practical in C Language
+                        Notes for Computer Aided Numerical Practical in C Language (PDF)
                     </a>
                 </div>
             </div>
@@ -531,7 +522,7 @@
             </div>
         </section>
 
-        
+
         <div class="grid-layout">
             <section style="border-bottom: none;">
                 <h2>Skills &amp; Expertise</h2>
@@ -560,7 +551,7 @@
                 JAM 2016 – AIR 156
             </div>
             </section>
-            
+
             <section style="border-bottom: none;">
             <h2>Service &amp; Academic Activities</h2>
             <div class="achievement-row">
@@ -574,11 +565,11 @@
         </div>
         </section>
         </div>
-      
-        
+
+
         <hr style="border: 0; border-top: 1px solid #f0f0f0;">
 
-        
+
 
 
     </main>
@@ -586,6 +577,219 @@
     <footer>
         <p>Last updated: August 2026</p>
     </footer>
+
+    <script>
+    /* LLL lattice reduction, played by scrolling.
+       The background is a fixed 2D lattice shown with a deliberately bad basis: two long, nearly
+       parallel vectors. Scrolling down plays the steps of the LLL algorithm one after another:
+       size-reduction (b2 <- b2 - b1, one subtraction at a time) and swaps, until the basis is reduced.
+       Scrolling up plays them backwards. The lattice points never change; only the basis does.
+       The steps are computed by actually running LLL (delta = 3/4) when the page loads.
+       Written in old-style JavaScript (no arrow functions, no let/const) so old browsers can read it;
+       browsers without canvas skip it and show the plain white page.
+       It only draws while the scroll position is changing, so it uses no CPU when the page is still. */
+    (function () {
+        var c = document.getElementById('bg');
+        if (!c || !c.getContext || !window.addEventListener) return;
+        var ctx = c.getContext('2d');
+        if (!ctx) return;
+
+        var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+        var raf = window.requestAnimationFrame || function (f) { return setTimeout(f, 16); };
+        var root = document.documentElement;
+        var W = 0, H = 0, cur = 0, target = 0, queued = false;
+
+        // ---- Run LLL once, in lattice units, and record every step. ----
+        // R1, R2: a reduced basis of the lattice. The bad starting basis is [[5,3],[3,2]] times it
+        // (determinant 1, so it spans exactly the same lattice).
+        var R1 = [1, -0.15], R2 = [0.4, 1];
+        // Rotate the whole lattice so the long bad vectors point upwards: they then fit in the tall
+        // side margin on wide screens and in the height of a phone screen.
+        var rc = Math.cos(-1.66), rs = Math.sin(-1.66);
+        R1 = [rc * R1[0] - rs * R1[1], rs * R1[0] + rc * R1[1]];
+        R2 = [rc * R2[0] - rs * R2[1], rs * R2[0] + rc * R2[1]];
+        var arr = [[5 * R1[0] + 3 * R2[0], 5 * R1[1] + 3 * R2[1]],
+                   [3 * R1[0] + 2 * R2[0], 3 * R1[1] + 2 * R2[1]]];  // the two arrows on screen
+        var role = [0, 1];  // role[0] = index of the arrow that is b1, role[1] = the one that is b2
+        var steps = [];
+        function dot(u, v) { return u[0] * v[0] + u[1] * v[1]; }
+        function record() {
+            steps.push({ v: [arr[0].slice(0), arr[1].slice(0)], r: role.slice(0) });
+        }
+        record();  // the bad basis
+        var g, q, sg, h, b1, b2, n1, mu;
+        for (g = 0; g < 20; g++) {
+            b1 = arr[role[0]]; b2 = arr[role[1]];
+            n1 = dot(b1, b1);
+            q = Math.round(dot(b2, b1) / n1);  // size reduction b2 <- b2 - q*b1, shown one b1 at a time
+            sg = q > 0 ? 1 : -1;
+            for (h = 0; h < Math.abs(q); h++) {
+                b2[0] -= sg * b1[0];
+                b2[1] -= sg * b1[1];
+                record();
+            }
+            mu = dot(b2, b1) / n1;
+            if (dot(b2, b2) - mu * mu * n1 >= (0.75 - mu * mu) * n1) break;  // Lovasz condition holds: done
+            role = [role[1], role[0]];
+            record();  // Lovasz condition failed: swap b1 and b2
+        }
+        record();  // the LLL-reduced basis, held at the bottom of the page
+        var N = steps.length;
+
+        function scrollY() { return window.pageYOffset || root.scrollTop || 0; }
+
+        // Resize the drawing buffer only when needed. The canvas is made a bit taller than the
+        // window so the address bar sliding in and out on phones doesn't force a resize.
+        function fit() {
+            var w = window.innerWidth, h = window.innerHeight;
+            if (w === W && h <= H) return;
+            var dpr = Math.min(window.devicePixelRatio || 1, 2);
+            W = w;
+            H = h + 120;
+            c.width = Math.round(W * dpr);
+            c.height = Math.round(H * dpr);
+            c.style.width = W + 'px';
+            c.style.height = H + 'px';
+            ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        function arrow(x0, y0, x1, y1) {
+            var a = Math.atan2(y1 - y0, x1 - x0), k = 7;
+            ctx.moveTo(x0, y0);
+            ctx.lineTo(x1, y1);
+            ctx.moveTo(x1 - k * Math.cos(a - 0.45), y1 - k * Math.sin(a - 0.45));
+            ctx.lineTo(x1, y1);
+            ctx.lineTo(x1 - k * Math.cos(a + 0.45), y1 - k * Math.sin(a + 0.45));
+        }
+
+        function smooth(x) { x = x < 0 ? 0 : x > 1 ? 1 : x; return x * x * (3 - 2 * x); }
+
+        // Draws "b" with a small subscript, centred at (x, y).
+        function label(sub, x, y, alpha) {
+            if (alpha < 0.02) return;
+            ctx.fillStyle = 'rgba(44,82,130,' + (0.9 * alpha).toFixed(3) + ')';
+            ctx.font = 'italic 16px Georgia, "Times New Roman", serif';
+            ctx.fillText('b', x - 3, y);
+            ctx.font = '11px Georgia, "Times New Roman", serif';
+            ctx.fillText(sub, x + 5, y + 5);
+        }
+
+        function draw() {
+            var max = Math.max(1, root.scrollHeight - window.innerHeight);
+            var p = reduce ? 0 : Math.min(1, Math.max(0, cur / max));
+            var s = W < 600 ? 26 : 40;  // pixels per lattice unit
+
+            // Which LLL step we are in: a short hold at the top and bottom of the page, and each step
+            // eases in and out so the arrows rest on lattice points between steps.
+            var t = Math.min(1, Math.max(0, (p - 0.04) / 0.88)) * (N - 1);
+            var k = Math.floor(t);
+            if (k > N - 2) k = N - 2;
+            var e = smooth((t - k - 0.2) / 0.6);
+            var S0 = steps[k], S1 = steps[k + 1];
+            var v = [], a;
+            for (a = 0; a < 2; a++) {
+                v.push([s * (S0.v[a][0] + (S1.v[a][0] - S0.v[a][0]) * e),
+                        s * (S0.v[a][1] + (S1.v[a][1] - S0.v[a][1]) * e)]);
+            }
+
+            // The current basis parallelogram is kept centred at (hx, hy): in the right-hand margin on
+            // wide screens, in the middle on narrow ones. The lattice is moved with it.
+            var hx = W >= 1400 ? (W + 1000) / 2 + (W - 1000) / 4 : W / 2;
+            var hy = window.innerHeight * 0.5;
+            var ox = hx - (v[0][0] + v[1][0]) / 2, oy = hy - (v[0][1] + v[1][1]) / 2;
+            var ax = s * R1[0], ay = s * R1[1], bx = s * R2[0], by = s * R2[1];
+            var det = ax * by - ay * bx;
+
+            // Range of integer coefficients (i, j) whose points can land on screen.
+            var xs = [-s, W + s, -s, W + s], ys = [-s, -s, H + s, H + s];
+            var imin = 1e9, imax = -1e9, jmin = 1e9, jmax = -1e9, n, i, j, x, y, cu, cv;
+            for (n = 0; n < 4; n++) {
+                x = xs[n] - ox; y = ys[n] - oy;
+                cu = (x * by - y * bx) / det;
+                cv = (ax * y - ay * x) / det;
+                if (cu < imin) imin = cu; if (cu > imax) imax = cu;
+                if (cv < jmin) jmin = cv; if (cv > jmax) jmax = cv;
+            }
+            imin = Math.floor(imin); imax = Math.ceil(imax);
+            jmin = Math.floor(jmin); jmax = Math.ceil(jmax);
+
+            ctx.clearRect(0, 0, W, H);
+
+            // Lattice points (these never change, whatever the basis).
+            ctx.beginPath();
+            for (i = imin; i <= imax; i++) {
+                for (j = jmin; j <= jmax; j++) {
+                    x = ox + i * ax + j * bx;
+                    y = oy + i * ay + j * by;
+                    if (x < -4 || x > W + 4 || y < -4 || y > H + 4) continue;
+                    ctx.moveTo(x + 1.8, y);
+                    ctx.arc(x, y, 1.8, 0, 6.2832);
+                }
+            }
+            ctx.fillStyle = 'rgba(85,107,47,0.32)';
+            ctx.fill();
+
+            // Fundamental parallelogram of the current basis (its area never changes either).
+            ctx.beginPath();
+            ctx.moveTo(ox, oy);
+            ctx.lineTo(ox + v[0][0], oy + v[0][1]);
+            ctx.lineTo(ox + v[0][0] + v[1][0], oy + v[0][1] + v[1][1]);
+            ctx.lineTo(ox + v[1][0], oy + v[1][1]);
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(85,107,47,0.10)';
+            ctx.fill();
+
+            // The two basis vectors.
+            ctx.beginPath();
+            arrow(ox, oy, ox + v[0][0], oy + v[0][1]);
+            arrow(ox, oy, ox + v[1][0], oy + v[1][1]);
+            ctx.strokeStyle = 'rgba(44,82,130,0.6)';
+            ctx.lineWidth = 1.6;
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(ox, oy, 3, 0, 6.2832);
+            ctx.fillStyle = 'rgba(44,82,130,0.6)';
+            ctx.fill();
+
+            // Labels b1 / b2 just past each arrow tip; they cross-fade during a swap.
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            for (a = 0; a < 2; a++) {
+                var len = Math.sqrt(v[a][0] * v[a][0] + v[a][1] * v[a][1]) || 1;
+                x = ox + v[a][0] + 14 * v[a][0] / len;
+                y = oy + v[a][1] + 14 * v[a][1] / len;
+                var was = S0.r[0] === a ? '1' : '2', now = S1.r[0] === a ? '1' : '2';
+                if (was === now) {
+                    label(now, x, y, 1);
+                } else {
+                    label(was, x, y, 1 - e);
+                    label(now, x, y, e);
+                }
+            }
+        }
+
+        // Ease towards the current scroll position so the motion stays smooth, then stop.
+        function step() {
+            queued = false;
+            var d = target - cur;
+            cur = Math.abs(d) < 0.5 ? target : cur + d * 0.2;
+            draw();
+            if (cur !== target) kick();
+        }
+        function kick() {
+            if (!queued) { queued = true; raf(step); }
+        }
+
+        fit();
+        cur = target = scrollY();
+        draw();
+
+        window.addEventListener('resize', function () { fit(); draw(); }, false);
+        if (!reduce) {
+            window.addEventListener('scroll', function () { target = scrollY(); kick(); }, false);
+        }
+    })();
+    </script>
 
 </body>
 </html>
